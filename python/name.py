@@ -14,8 +14,8 @@ names.append("khyati")
 # sorting the list
 names.sort()
 #the no of elements in the list:
-print(f"The total elements in the list are: {len(names)}")
 print(names)
+print(f"The total elements in the list are: {len(names)}")
 
 
 #sets
@@ -33,3 +33,9 @@ print(set1)
 set1.remove(3)
 print(set1)
 print(f"the total number of the elements are {len(set1)}")
+
+#dict
+dict1 = {"name": "jaspreet","RollNo":2102611,"course":"B.tech"}
+print(dict1)
+dict1.pop("name")
+print(dict1)
