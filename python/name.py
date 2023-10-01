@@ -1,46 +1,46 @@
-# num = int(input("Enter any number:"))
-# if num%2 == 0:
-#     print(f"{num} is even.")
-# else:
-#     print(f"{num} is odd.")
+num = int(input("Enter any number:"))
+if num%2 == 0:
+    print(f"{num} is even.")
+else:
+    print(f"{num} is odd.")
 
 
-# # list 
+# list 
 
-# names = ["jassi","manya","kunwar"]
-# print(names)
-# # appending  in the list
-# names.append("khyati")
-# # sorting the list
-# names.sort()
-# #the no of elements in the list:
-# print(names)
-# print(f"The total elements in the list are: {len(names)}")
+names = ["jassi","manya","kunwar"]
+print(names)
+# appending  in the list
+names.append("khyati")
+# sorting the list
+names.sort()
+#the no of elements in the list:
+print(names)
+print(f"The total elements in the list are: {len(names)}")
 
 
-# #sets
+#sets
 
-# #an empty set
-# set1 = set()
-# # no element repeats more than once. 
-# #adding element
-# set1.add(1)
-# set1.add(5)
-# set1.add(2)
-# set1.add(3)
-# set1.add(4)
-# print(set1)
-# set1.remove(3)
-# print(set1)
-# print(f"the total number of the elements are {len(set1)}")
+#an empty set
+set1 = set()
+# no element repeats more than once. 
+#adding element
+set1.add(1)
+set1.add(5)
+set1.add(2)
+set1.add(3)
+set1.add(4)
+print(set1)
+set1.remove(3)
+print(set1)
+print(f"the total number of the elements are {len(set1)}")
 
 # #dict
 dict1 = {"name": "jaspreet","RollNo":2102611,"course":"B.tech"}
 print(dict1)
 dict1["Semester"] = 5
 print(dict1["Semester"])
-# dict1.pop("name")
-# print(dict1)
+dict1.pop("name")
+print(dict1)
 
 
 #loops
