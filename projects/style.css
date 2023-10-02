@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    gap: 5%;
+    height: 100vh;
+  }
+  .input {
+    border-radius: 40px;
+    width: 41rem;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    padding: 2%;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.87);
+    font-weight: 400;
+    padding-left: 8%;
+  }
+  form {
+    position: relative;
+    left: 40px;
+  }
+  *:focus {
+    outline: none;
+  }
+  .input:hover {
+    box-shadow: 1px 1px 5px #00000054;
+  }
+  .search-icon {
+    top: 30%;
+    left: 3%;
+    opacity: 0.5;
+  }
+  .search-icon {
+    position: absolute;
+    top: 17px;
+    width: 15px;
+  }
+  .icons {
+    display: inline-flex;
+    position: relative;
+    top: 5px;
+    right: 80px;
+    gap: 15px;
+  }
+  .icons img {
+    width: 25px;
+  }
+  .buttons {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    top: 40%;
+    position: relative;
+    right: 30px;
+  }
+  .buttons button {
+    padding: 1%;
+    background-color: #f8f9fa;
+    border: none;
+    transition: all 0.5s;
+    width: 20%;
+  }
+  .buttons button:hover {
+    box-shadow: 1px 1px 5px #00000054;
+  }
+  .header {
+    padding: 2%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2%;
+    padding-bottom: 0;
+    font-size: 0.9rem;
+    z-index: 1;
+    position: relative;
+  }
+  .container {
+    position: relative;
+    bottom: 100px;
+  }
+  .header a {
+    text-decoration: none;
+    color: #00000087;
+    cursor: pointer;
+  }
+  .header:hover {
+    text-decoration: solid;
+    /* background-color: antiquewhite; */
+  }
+  .logo p {
+    position: relative;
+    bottom: 20%;
+    left: 90%;
+    color: #4285f4;
+  }

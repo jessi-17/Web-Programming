@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="header">
+      <a href="google_image.html">Image Search</a>
+      <a href="https://www.google.com/advanced_search">Google Advance Search</a>
+    </div>
+    <div class="container">
+      <div class="logo">
+        <img
+          src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+          alt=""
+        />
+      </div>
+      <form id="searchForm" action="">
+        <img src="images/pngwing.com (1).png" class="search-icon" alt="" />
+        <input type="text" class="input" name="" id="searchInput" />
+        <div class="icons">
+          <img src="images/google-voice.png" alt="voice" />
+          <img src="images/pngwing.com.png" alt="voice" />
+        </div>
+        <div class="buttons">
+          <button><a href="index.html"></a>Google Search</button>
+          <button onclick="redirectFeelingLucky()">I'm Feeling Lucky!</button>
+        </div>
+      </form>
+    </div>
+    <script>
+      // Get references to the form and input field
+      const searchForm = document.getElementById("searchForm");
+      const searchInput = document.getElementById("searchInput");
+
+      // Add a submit event listener to the form
+      searchForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Get the user's input from the input field
+        const userInput = searchInput.value;
+
+        // Check if the user entered something
+        if (userInput.trim() !== "") {
+          // Construct the Google search URL with the user's input
+          const googleSearchURL = `https://www.google.com/search?q=${encodeURIComponent(
+            userInput
+          )}`;
+
+          // Redirect the user to the Google search URL
+          window.location.href = googleSearchURL;
+        }
+      });
+      function redirectFeelingLucky() {
+        // Redirect to the "I'm Feeling Lucky" search
+        window.location.href = "https://www.google.com/search?btnI=1";
+      }
+    </script>
+  </body>
+</html>
