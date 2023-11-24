@@ -3,96 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Name Form</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #FCEBED;
-            background-repeat: no-repeat;
-            background-size: cover; 
-            font-family: 'Arial', sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-
-        .container {
-            background-color: rgba(255, 182, 193, 0.7); /* Pink with transparency */
-            width: 40vw;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Box shadow for depth */
-        }
-
-        h1 {
-            text-align: center;
-            color: #333; /* Dark text color */
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        label {
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-
-        input {
-            padding: 8px;
-            margin-bottom: 16px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        button {
-            padding: 10px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            width: 100%;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-    </style>
+    <title>message for you</title>
+    <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <div class="container">
-        <h1>Enter Your Name</h1>
-        <form id="nameForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <button type="button" onclick="checkName()">Submit</button>
-        </form>
+    <div class="wrapper">
+        <h2 class="question">Will you go out with me?</h2>
+        <img class="gif" alt="gif" src="https://media.giphy.com/media/FTGah7Mx3ss04PcasF/giphy.gif"/>
+        <div class="btn-group">
+            <button class="yes-btn">Yes</button>
+            <button class="no-btn">No</button>
+        </div>
     </div>
-    <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.508/build/spline-viewer.js"></script>
-<spline-viewer hint url="https://prod.spline.design/efXGKOutIPabpa6V/scene.splinecode " style="width: 50%; height: 50%;"></spline-viewer>
-<script>
-            function checkName() {
-            var enteredName = document.getElementById('name').value.toLowerCase();
-
-            if (enteredName === 'kunwar') {
-                // Redirect to the next page
-                window.location.href = 'photo.html';
-            } else {
-                // Redirect to a different page
-                window.location.href = 'no.html';
-            }
-        }
-    </script>
-      
-
-</script>
+    <script src="script.js"></script>
 </body>
 </html>
- 

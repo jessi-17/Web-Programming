@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        * {
+          padding: 0;
+          margin: 0;
+          box-sizing: border-box;
+        }
+        @font-face {
+          font-family: "Agraham"; /* Choose a name for your font */
+          src: url("Agraham.otf") format("opentype");
+          /* Additional font file formats and variations can be added here */
+        }
+  
+        body {
+          font-family: "Agraham", sans-serif; /* Use the custom font as a fallback */
+        }
+  
+        html,
+        body {
+          width: 100%;
+          height: 100%;
+          background-color: #FCEBED;
+        }
+        #center {
+          width: 54%;
+          height: 60%;
+          top: 50%;
+          left: 50%;
+          position: relative;
+          transform: translate(-50%, -50%);
+        }
+        h1{
+            text-transform:capitalize;
+            color:rgb(159, 119, 119);
+        }
+        .imagediv {
+          position: absolute;
+          width: 200px;
+          height: 270px;
+          overflow: hidden;
+          transition: transform 0.3s ease-in-out;
+        }
+  
+        .imagediv img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .button-container {
+            position: absolute;
+            align-items: center;
+            display: flex;
+            bottom: 35px;
+            text-align: center;
+            left: 40%;
+        }
+
+        button {
+            padding: 15px 30px;
+            background-color: rgb(159, 119, 119);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 20px;
+            font-family: monospace;
+        }
+
+        button:hover {
+          background-color: rgb(106, 79, 79);
+        }
+    </style>
+  </head>
+  <body>
+    <div id="center">
+        <div class="text">
+            <h4>hey kunwar, Do you remember salle??</h4>
+            <h1>No matter what, <br>No matter the Exception <br>
+            I will always Love you   &&<br>
+            I will always be there for you. </h1>
+        </div>
+    </div>
+    <div class="button-container">
+        <button onclick="window.location.href='index.html'">Can i ask you something??</button>
+    </div>
+    <script>
+      const throttleFunction = (func, delay) => {
+        let prev = 0;
+        return (...args) => {
+          let now = new Date().getTime();
+          if (now - prev > delay) {
+            prev = now;
+            return func(...args);
+          }
+        };
+      };
+      document.querySelector("#center").addEventListener(
+        "mousemove",
+        throttleFunction((dets) => {
+          var div = document.createElement("div");
+          div.classList.add("imagediv");
+          div.style.left = dets.clientX + 'px';
+          div.style.top = dets.clientY + 'px';
+          var img = document.createElement("img");
+
+          const imageUrls = [
+            "images/1.jpg",
+            "images/2.jpg",
+            "images/3.jpg",
+            "images/4.jpg",
+            "images/5.jpg",
+            "images/6.jpg",
+            "images/7.jpg",
+            "images/8.jpg",
+            "images/9.jpg",
+            "images/10.jpg",
+            "images/11.jpg",
+            "images/12.jpg",
+            "images/13.jpg",
+            "images/14.jpg",
+            "images/15.jpg",
+            "images/16.jpg",
+            // Add more image URLs as needed
+          ];
+
+          const randomImageUrl = imageUrls[Math.floor(Math.random() * imageUrls.length)];
+
+          img.setAttribute("src", randomImageUrl);
+          div.appendChild(img);
+          document.body.appendChild(div);
+
+          gsap.to(img,{
+            y:"0",
+            ease:Power1,
+            duration:.8
+          });
+          gsap.to(img,{
+            y:"100%", 
+            delay:.4,
+            ease:Power2
+          });
+
+          setTimeout(function(){
+            div.remove();
+          }, 2000);
+        }, 400)
+      );
+    </script>
+  </body>
+</html>
