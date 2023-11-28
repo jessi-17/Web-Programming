@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>I hope u r not annoyed!</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+          body {
+      background-color: #FCEBED;;
+      transition: background-color 0.5s ease; /* Add transition for background-color */
+    }
+
+    </style>
+  </head>
+  <body>
+    <div id="center">
+      <div class="text">
+        <h4>
+          hey kunwar, I know you're angry with me... <br />but salle always
+          remember
+        </h4>
+        <h1>
+          No matter what, <br />No matter the Exception <br />
+          I will always Love you &&<br />
+          I will always be there for you.
+        </h1>
+      </div>
+    </div>
+
+    <div class="music">
+      <p style="            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;">Click here to play my comfort song!</p>
+      <img src="images/play.png" alt="" id="playPauseIcon" />
+      <audio src="audio/New West - Those Eyes (Lyrics).mp3" id="mysong"></audio>
+      <div class="button-container">
+        <button onclick="window.location.href='ask.html'">
+          Can i ask you something??
+        </button>
+      </div>
+    </div>
+
+    <script>
+      const throttleFunction = (func, delay) => {
+        let prev = 0;
+        return (...args) => {
+          let now = new Date().getTime();
+          if (now - prev > delay) {
+            prev = now;
+            return func(...args);
+          }
+        };
+      };
+      document.querySelector("#center").addEventListener(
+        "mousemove",
+        throttleFunction((dets) => {
+          var div = document.createElement("div");
+          div.classList.add("imagediv");
+          div.style.left = dets.clientX + "px";
+          div.style.top = dets.clientY + "px";
+          var img = document.createElement("img");
+
+          const imageUrls = [
+            "images/1.jpg",
+            "images/2.jpg",
+            "images/3.jpg",
+            "images/4.jpg",
+            "images/5.jpg",
+            "images/6.jpg",
+            "images/7.jpg",
+            "images/8.jpg",
+            "images/9.jpg",
+            "images/6.jpg",
+            "images/9.jpg",
+            "images/6.jpg",
+            "images/9.jpg",
+            "images/9.jpg",
+            "images/10.jpg",
+            "images/11.jpg",
+            "images/12.jpg",
+            "images/13.jpg",
+            "images/14.jpg",
+            "images/15.jpg",
+            "images/16.jpg",
+            "images/17.jpg",
+            "images/18.jpg",
+            "images/19.jpg",
+            // Add more image URLs as needed
+          ];
+
+          const randomImageUrl =
+            imageUrls[Math.floor(Math.random() * imageUrls.length)];
+
+          img.setAttribute("src", randomImageUrl);
+          div.appendChild(img);
+          document.body.appendChild(div);
+
+          gsap.to(img, {
+            y: "0%",
+            ease: Power2,
+            duration:1,
+          });
+          gsap.to(img, {
+            y: "100%",
+            delay: 0.5,
+            ease: Power3,
+          });
+
+          setTimeout(function () {
+            div.remove();
+          }, 2000);
+        },400)
+      );
+
+      var mySong = document.getElementById("mysong");
+    var playPauseIcon = document.getElementById("playPauseIcon");
+
+    playPauseIcon.onclick = function () {
+      if (mySong.paused) {
+        mySong.play();
+        playPauseIcon.src = "images/pause.png";
+        document.body.style.backgroundColor = "#e8c2c7";
+      } else {
+        mySong.pause();
+        playPauseIcon.src = "images/play.png";
+        document.body.style.backgroundColor = "#FCEBED";
+      }
+    };
+    </script>
+  </body>
+</html>
